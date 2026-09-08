@@ -23,6 +23,11 @@ internal class Teacher : Person, ITeacher
         throw new NotImplementedException();
     }
 
+    void ITeacher.MissinformClass()
+    {
+        throw new NotImplementedException();
+    }
+
     void ITeacher.PrepareMaterial()
     {
         throw new NotImplementedException();
