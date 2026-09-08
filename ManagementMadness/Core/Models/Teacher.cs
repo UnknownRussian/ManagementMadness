@@ -23,7 +23,7 @@ internal class Teacher : Person, ITeacher
         throw new NotImplementedException();
     }
 
-    void ITeacher.MissinformClass()
+    void ITeacher.MisinformClass()
     {
         throw new NotImplementedException();
     }
