@@ -1,20 +1,27 @@
 namespace ManagementMadness.GUI.Components;
 
-internal class MainMenu
+internal class MenuComponent
 {
-    internal static string ShowMenu(string[] menuOptions)
+    private string[] options;
+    private string name;
+
+    internal MenuComponent(string name, string[] options, bool isMain = false)
     {
-        List<string> options = [.. menuOptions.ToList().Prepend("Exit")];
-        
+        this.name = name;
+        this.options = [.. options.ToList().Prepend(isMain ? "Exit" : "Back")];
+    }
+
+    internal string Show()
+    {        
         Console.Clear();
         Console.WriteLine("===============");
-        Console.WriteLine(" - Main Menu - ");
+        Console.WriteLine($" - {name} - ");
         Console.WriteLine("===============");
 
         options
-            .Where(menuOption => options.IndexOf(menuOption) > 0)
+            .Where(option => options.IndexOf(option) > 0)
             .ToList()
-            .ForEach(menuOption => Console.WriteLine($"{options.IndexOf(menuOption)} - {menuOption}"));
+            .ForEach(option => Console.WriteLine($"{options.IndexOf(option)} - {option}"));
 
         Console.WriteLine($"0 - {options[0]}");
         Console.WriteLine();
@@ -24,16 +31,16 @@ internal class MainMenu
 
         try
         {
-            return menuOptions[optionChoosen];
+            return options[optionChoosen];
         } catch
         {
             Console.WriteLine("Please choose an available option from the menu!");
             Thread.Sleep(2000);
-            return ShowMenu(menuOptions);
+            return Show();
         }
     }
 
-    private static int GetUserInput()
+    private int GetUserInput()
     {
         if (int.TryParse(Console.ReadLine(), out int menuNumber)) return menuNumber;
         return -1;

@@ -6,10 +6,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        string[] menuOptions = ["Manage Teachers", "Manage Students", "Manage Class'", "Manage Rooms"];
+        MenuComponent mainMenu = new (
+                "Main Menu",
+                [
+                    "Manage teachers", 
+                    "Manage students", 
+                    "Manage professions",
+                    "Set game speed"
+                ],
+                true
+            );
 
 
-        var selected = MainMenu.ShowMenu(menuOptions);
+        var selected = mainMenu.Show();
 
         Console.WriteLine(selected);
         Console.ReadLine();
