@@ -9,7 +9,7 @@ internal abstract class Person
     protected int energy;
     protected int sleep;
     protected int attention;
-    protected int preperation;
+    protected int preparation;
 
     // These values determain wether or not a person has challenges
     protected bool isSmoking;
@@ -17,7 +17,7 @@ internal abstract class Person
     protected bool hasAutism;
     protected bool hasADHD;
 
-    internal Person(string name, int age, bool isSmoking = false, bool hasDegree = false, bool hasAutism = false, bool hasADHD = false)
+    protected Person(string name, int age, bool isSmoking = false, bool hasDegree = false, bool hasAutism = false, bool hasADHD = false)
     {
         this.name = name;
         this.age = age;
@@ -25,7 +25,7 @@ internal abstract class Person
         sleep = 100;
         attention = 100;
         energy = 100;
-        preperation = 100;
+        preparation = 100;
 
         this.isSmoking = isSmoking;
         this.hasDegree = hasDegree;

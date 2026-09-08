@@ -1,6 +1,8 @@
+using ManagementMadness.Core.Interfaces;
+
 namespace ManagementMadness.Core.Models;
 
-internal class Student : Person
+internal class Student : Person, IStudent
 {
     public Student(
         string name, 
@@ -17,6 +19,31 @@ internal class Student : Person
     }
 
     internal override string GetThoughts()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IStudent.GoToClass()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IStudent.Houdini()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IStudent.MakeExcuse()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IStudent.StudyAtHome()
+    {
+        throw new NotImplementedException();
+    }
+
+    void IStudent.StudyInClass()
     {
         throw new NotImplementedException();
     }
