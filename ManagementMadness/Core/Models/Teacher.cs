@@ -1,8 +1,6 @@
-using ManagementMadness.Core.Interfaces;
-
 namespace ManagementMadness.Core.Models;
 
-internal class Teacher : Person, ITeacher
+internal class Teacher : Person
 {
     public Teacher(
         string name, 
@@ -23,22 +21,22 @@ internal class Teacher : Person, ITeacher
         throw new NotImplementedException();
     }
 
-    void ITeacher.MisinformClass()
+    internal void MisinformClass()
     {
         throw new NotImplementedException();
     }
 
-    void ITeacher.PrepareMaterial()
+    internal void PrepareMaterial()
     {
         throw new NotImplementedException();
     }
 
-    void ITeacher.TakeBreak()
+    internal void TakeBreak()
     {
         throw new NotImplementedException();
     }
 
-    void ITeacher.TeachClass()
+    internal void TeachClass()
     {
         throw new NotImplementedException();
     }
